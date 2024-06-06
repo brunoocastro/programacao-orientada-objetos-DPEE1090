@@ -24,7 +24,7 @@ public:
 
   // Métodos para alterar balance
   void deposit(double amount);
-  void withdraw(double amount);
+  void virtual withdraw(double amount);
 };
 
 #endif

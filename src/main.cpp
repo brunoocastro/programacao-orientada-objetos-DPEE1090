@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Account.h"
 #include "BusinessAccount.h"
+#include <SavingsAccount.h>
 
 int main() {
     // Criação de uma conta padrão
@@ -24,5 +25,15 @@ int main() {
     businessAccount1.loan(6000.0);
     std::cout << "After trying to exceed loan limit, Business Account Balance: $" << businessAccount1.getBalance() << std::endl;
 
+    SavingsAccount savingsAccount1(11223, "Alice Smith", 1500.0);
+    std::cout << "\nSavings Account Number: " << savingsAccount1.getNumber() << std::endl;
+    std::cout << "Savings Account Holder: " << savingsAccount1.getHolder() << std::endl;
+    std::cout << "Savings Account Balance: $" << savingsAccount1.getBalance() << std::endl;
+
+    // Realizando um saque com taxa
+    savingsAccount1.withdraw(100.0);
+    std::cout << "After withdrawal with fee, Savings Account Balance: $" << savingsAccount1.getBalance() << std::endl;
+
+    
     return 0;
 }
